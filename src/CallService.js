@@ -4,7 +4,7 @@ export default async function CallService(method, params = null, request = '') {
   try {
     if (request === 'post') {
       const json = await ky
-        .post(serviceUrl + method, {
+        .post(method, {
           json: params,
         })
         .json();
@@ -13,7 +13,7 @@ export default async function CallService(method, params = null, request = '') {
     }
 
     const json = await ky
-      .get(serviceUrl + method, {
+      .get(method, {
         searchParams: params,
       })
       .json();
