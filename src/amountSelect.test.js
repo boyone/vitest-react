@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import amountSelect from './firstClassFunc';
+import amountSelect, {xxx} from './firstClassFunc';
 
 describe('First Class Function', () => {
 
@@ -13,12 +13,12 @@ describe('First Class Function', () => {
   test('Amount Select with Destination Quantity', () => {
     const secondProductArr = [{ DEST_QUANTITY: 15000, LOST_QUANTITY: 50 }];
 
-    const amountSelectCal = amountSelect(secondProductArr, { COND1: 'D' }, 'Q');
+    const amountSelectCal = xxx('Q', secondProductArr, { COND1: 'D' });
     expect(amountSelectCal).toBe(15000);
   });
 
   test('Amount Select with Calculation Type A', () => {
-    const amountSelectCal = amountSelect([], { }, 'A');
+    const amountSelectCal = xxx('A');
     expect(amountSelectCal).toBe(1);
     expect(amountSelectCal).toBe(1.0);
     expect(amountSelectCal).toBe(1.00);
